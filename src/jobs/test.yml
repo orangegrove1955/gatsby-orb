@@ -1,0 +1,7 @@
+description: >
+  Run automated testing suite
+executor: default
+steps:
+  - attach_workspace:
+      at: ~/
+  - test

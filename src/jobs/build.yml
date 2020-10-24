@@ -1,0 +1,7 @@
+description: >
+  Build the application in production mode.
+executor: default
+steps:
+  - attach_workspace:
+      at: ~/
+  - build

@@ -1,0 +1,7 @@
+description: >
+  Install dependencies
+executor: default
+steps:
+  - attach_workspace:
+      at: ~/
+  - install

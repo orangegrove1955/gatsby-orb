@@ -1,0 +1,4 @@
+description: >
+  Install dependencies
+steps:
+  - run: npm install

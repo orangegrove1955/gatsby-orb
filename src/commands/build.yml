@@ -1,0 +1,4 @@
+description: >
+  Create a production build of Gatsby project
+steps:
+  - run: NODE_ENV=production npm run build
