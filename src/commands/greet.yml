@@ -1,5 +1,5 @@
 description: >
-  An orb for testing and building Gatsby applications on CircleCI
+  This command echos "Hello World" using file inclusion.
 # What will this command do?
 # Descriptions should be short, simple, and clear.
 parameters:
