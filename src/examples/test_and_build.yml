@@ -18,7 +18,7 @@ usage:
 
   workflows:
     checkout:
-      jobs: -checkout_code
+      jobs: - checkout_code
     # - gatsby/test:
     #     name: test_Gatsby_code
     #     requires:
