@@ -26,4 +26,5 @@ steps:
       steps:
         - attach_workspace:
             at: <<parameters.workspace_root>>
+  - install
   - build
