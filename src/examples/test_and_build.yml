@@ -1,13 +1,28 @@
 description: >
-  Sample example description.
-# Provide a use-case based example for using this orb.
-# Everything in the `usage` section will be displayed in the orb registry.
-# Comments are not retained.
+  A full setup including automated testing before allowing building
 usage:
   version: 2.1
   orbs:
-    <orb-name>: <namespace>/<orb-name>@1.2.3
+    gatsby: orangegrove1955/gatsby-orb@1.0.
+
+  # Custom jobs which are not part of the Orb
+  jobs:
+    checkout_code:
+      executor:
+        name: gatsby/default
+      steps:
+        - checkout
+        - persist_to_workspace:
+            root: .
+            paths: .
+
   workflows:
-    use-my-orb:
-      jobs:
-        - <orb-name>/<job-name>
+    - checkout_code
+    - gatsby/test:
+        name: test_Gatsby_code
+        requires:
+          - checkout_code
+    - gatsby/build:
+        name: build_Gatsby_code
+        requires:
+          - gatsby/test
