@@ -17,7 +17,8 @@ usage:
             paths: .
 
   workflows:
-    - checkout_code
+    checkout:
+      jobs: -checkout_code
     # - gatsby/test:
     #     name: test_Gatsby_code
     #     requires:
