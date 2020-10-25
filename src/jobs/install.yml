@@ -17,13 +17,4 @@ parameters:
     default: .
 
 steps:
-  - when:
-    condition: <<parameters.checkout>>
-    steps:
-      - checkout
-  - when:
-    condition: <<parameters.attach_workspace>>
-    steps:
-      - attach_workspace:
-          at: <<parameters.workspace_root>>
   - install
