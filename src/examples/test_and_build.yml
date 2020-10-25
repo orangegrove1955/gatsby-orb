@@ -5,7 +5,6 @@ usage:
   orbs:
     gatsby: orangegrove1955/gatsby-orb@1.0.1
 
-
   # Custom jobs which are not part of the Orb
   jobs:
     checkout_code:
