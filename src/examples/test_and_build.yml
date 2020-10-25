@@ -20,10 +20,12 @@ usage:
     checkout:
       jobs:
         - checkout_code
-    # - gatsby/test:
-    #     name: test_Gatsby_code
-    #     requires:
-    #       - checkout_code
+    test:
+      jobs:
+        - gatsby/test:
+            name: test_Gatsby_code
+            requires:
+              - checkout_code
     # - gatsby/build:
     #     name: build_Gatsby_code
     #     requires:
