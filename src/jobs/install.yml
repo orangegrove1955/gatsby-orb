@@ -1,0 +1,29 @@
+description: >
+  Install dependencies
+executor: default
+
+parameters:
+  checkout:
+    description: Boolean for whether or not to checkout as a first step. Default is true.
+    type: boolean
+    default: true
+  attach_workspace:
+    description: Boolean for whether or not to attach to an existing workspace. Default is true.
+    type: boolean
+    default: true
+  workspace_root:
+    description: Workspace root path that is either an absolute path or a path relative to the working directory. Defaults to '.' (the working directory).
+    type: string
+    default: .
+
+steps:
+  - when:
+      condition: <<parameters.checkout>>
+      steps:
+        - checkout
+  - when:
+      condition: <<parameters.attach_workspace>>
+      steps:
+        - attach_workspace:
+            at: <<parameters.workspace_root>>
+  - install

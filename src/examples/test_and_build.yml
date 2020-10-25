@@ -1,0 +1,34 @@
+description: >
+  A full setup including automated testing before allowing building
+usage:
+  version: 2.1
+  orbs:
+    gatsby: orangegrove1955/gatsby-orb@1.0.0
+
+  # Custom jobs which are not part of the Orb
+  jobs:
+    checkout_code:
+      executor:
+        name: gatsby/default
+      steps:
+        - checkout
+        - persist_to_workspace:
+            root: .
+            paths: .
+
+  workflows:
+    checkout:
+      jobs:
+        - checkout_code
+    test:
+      jobs:
+        - gatsby/test:
+            name: test_Gatsby_code
+            requires:
+              - checkout_code
+    build:
+      jobs:
+        - gatsby/build:
+            name: build_Gatsby_code
+            requires:
+              - test_Gatsby_code

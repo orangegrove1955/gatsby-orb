@@ -1,0 +1,4 @@
+description: >
+  Run automated testing suite
+steps:
+  - run: CI=true npm test
