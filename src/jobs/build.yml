@@ -18,7 +18,7 @@ parameters:
 
 steps:
   - when:
-    condition: <<parameters.checkout>>
-    steps:
-      - checkout
+      condition: <<parameters.checkout>>
+      steps:
+        - checkout
   - build
